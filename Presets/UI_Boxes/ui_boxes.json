@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "window_title": "BlueStacks App Player 1",
+  "calibrated_at": "2026-05-07 21:42:18",
+  "active_interface": "sg",
+  "interfaces": {
+    "Get_Info": {
+      "active_preset": "16X10",
+      "presets": {
+        "16X10": {
+          "boxes": {
+            "Money": {
+              "nx1": 0.025,
+              "ny1": 0.315,
+              "nx2": 0.0825,
+              "ny2": 0.344,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Timer": {
+              "nx1": 0.464375,
+              "ny1": 0.0,
+              "nx2": 0.535625,
+              "ny2": 0.035,
+              "lock_move": true,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Armor": {
+              "nx1": 0.338125,
+              "ny1": 0.945833,
+              "nx2": 0.364375,
+              "ny2": 0.968833,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Team": {
+              "nx1": 0.888125,
+              "ny1": 0.169,
+              "nx2": 0.894375,
+              "ny2": 0.179,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Rounds_CT": {
+              "nx1": 0.464375,
+              "ny1": 0.038,
+              "nx2": 0.498125,
+              "ny2": 0.068,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Rounds_TR": {
+              "nx1": 0.501875,
+              "ny1": 0.038,
+              "nx2": 0.535,
+              "ny2": 0.068,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Ammo": {
+              "nx1": 0.131459,
+              "ny1": 0.947,
+              "nx2": 0.189584,
+              "ny2": 0.99,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "minimap": {
+              "nx1": 0.7875,
+              "ny1": 0.008,
+              "nx2": 0.99375,
+              "ny2": 0.34,
+              "lock_move": true,
+              "lock_size": true,
+              "lock_aspect": true
+            },
+            "ammo_overall": {
+              "nx1": 0.206979,
+              "ny1": 0.952,
+              "nx2": 0.267708,
+              "ny2": 0.989167,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Health": {
+              "nx1": 0.369791,
+              "ny1": 0.925,
+              "nx2": 0.426562,
+              "ny2": 0.967,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Killfeed": {
+              "nx1": 0.0,
+              "ny1": 0.0,
+              "nx2": 0.185625,
+              "ny2": 0.169166,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Chat": {
+              "nx1": 0.01375,
+              "ny1": 0.446,
+              "nx2": 0.309375,
+              "ny2": 0.574,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Zone_Callout": {
+              "nx1": 0.7625,
+              "ny1": 0.008,
+              "nx2": 0.8375,
+              "ny2": 0.033833,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            }
+          }
+        },
+        "16X9": {
+          "boxes": {
+            "Money": {
+              "nx1": 0.027344,
+              "ny1": 0.353925,
+              "nx2": 0.085938,
+              "ny2": 0.381684,
+              "ocr_filter": "number",
+              "ocr_max_value": 99999,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Timer": {
+              "nx1": 0.464844,
+              "ny1": 0.0,
+              "nx2": 0.535156,
+              "ny2": 0.034708,
+              "ocr_filter": "number",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Armor": {
+              "nx1": 0.339844,
+              "ny1": 0.944225,
+              "nx2": 0.359375,
+              "ny2": 0.965053,
+              "ocr_filter": "number",
+              "ocr_max_value": 100,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Team": {
+              "nx1": 0.8875,
+              "ny1": 0.188889,
+              "nx2": 0.893854,
+              "ny2": 0.198445,
+              "ocr_filter": "color",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": false,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Rounds_CT": {
+              "nx1": 0.464844,
+              "ny1": 0.041649,
+              "nx2": 0.496094,
+              "ny2": 0.076357,
+              "ocr_filter": "number",
+              "ocr_max_value": 99,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Rounds_TR": {
+              "nx1": 0.503906,
+              "ny1": 0.041649,
+              "nx2": 0.535156,
+              "ny2": 0.076357,
+              "ocr_filter": "number",
+              "ocr_max_value": 99,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Ammo": {
+              "nx1": 0.128906,
+              "ny1": 0.936905,
+              "nx2": 0.1875,
+              "ny2": 1.0,
+              "ocr_filter": "number",
+              "ocr_max_value": 100,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "minimap": {
+              "nx1": 0.785156,
+              "ny1": 0.013883,
+              "nx2": 0.992188,
+              "ny2": 0.381773,
+              "ocr_filter": "none",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": false,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "ammo_overall": {
+              "nx1": 0.210938,
+              "ny1": 0.936905,
+              "nx2": 0.261719,
+              "ny2": 1.0,
+              "ocr_filter": "number",
+              "ocr_max_value": 200,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Health": {
+              "nx1": 0.367188,
+              "ny1": 0.916453,
+              "nx2": 0.425781,
+              "ny2": 0.964815,
+              "ocr_filter": "number",
+              "ocr_max_value": 100,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Killfeed": {
+              "nx1": 0.0,
+              "ny1": 0.0,
+              "nx2": 0.1875,
+              "ny2": 0.166501,
+              "ocr_filter": "none",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": false,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Chat": {
+              "nx1": 0.0,
+              "ny1": 0.423323,
+              "nx2": 0.308594,
+              "ny2": 0.589876,
+              "ocr_filter": "none",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru+en",
+              "ocr_postprocess": false,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            },
+            "Zone_Callout": {
+              "nx1": 0.753906,
+              "ny1": 0.013883,
+              "nx2": 0.828125,
+              "ny2": 0.041648,
+              "ocr_filter": "letters",
+              "ocr_max_value": null,
+              "ocr_letters_lang": "ru",
+              "ocr_postprocess": true,
+              "lock_move": false,
+              "lock_size": false,
+              "lock_aspect": false
+            }
+          }
+        }
+      }
+    },
+    "new_preset": {
+      "presets": {
+        "default": {
+          "boxes": {}
+        }
+      },
+      "active_preset": "default"
+    },
+    "sg": {
+      "presets": {
+        "default": {
+          "boxes": {}
+        }
+      },
+      "active_preset": "default"
+    }
+  },
+  "active_preset": "default",
+  "presets": {
+    "16X10": {
+      "boxes": {
+        "Money": {
+          "nx1": 0.025,
+          "ny1": 0.315,
+          "nx2": 0.0825,
+          "ny2": 0.344,
+          "ocr_filter": "number",
+          "ocr_max_value": 99999,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Timer": {
+          "nx1": 0.464375,
+          "ny1": 0.0,
+          "nx2": 0.535625,
+          "ny2": 0.035,
+          "ocr_filter": "number",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Armor": {
+          "nx1": 0.338125,
+          "ny1": 0.945833,
+          "nx2": 0.364375,
+          "ny2": 0.968833,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Team": {
+          "nx1": 0.888125,
+          "ny1": 0.169,
+          "nx2": 0.894375,
+          "ny2": 0.179,
+          "ocr_filter": "color",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Rounds_CT": {
+          "nx1": 0.464375,
+          "ny1": 0.038,
+          "nx2": 0.498125,
+          "ny2": 0.068,
+          "ocr_filter": "number",
+          "ocr_max_value": 99,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Rounds_TR": {
+          "nx1": 0.501875,
+          "ny1": 0.038,
+          "nx2": 0.535,
+          "ny2": 0.068,
+          "ocr_filter": "number",
+          "ocr_max_value": 99,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Ammo": {
+          "nx1": 0.131459,
+          "ny1": 0.947,
+          "nx2": 0.189584,
+          "ny2": 0.99,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "minimap": {
+          "nx1": 0.7875,
+          "ny1": 0.008,
+          "nx2": 0.99375,
+          "ny2": 0.34,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": true,
+          "lock_size": true,
+          "lock_aspect": true
+        },
+        "ammo_overall": {
+          "nx1": 0.206979,
+          "ny1": 0.952,
+          "nx2": 0.267708,
+          "ny2": 0.989167,
+          "ocr_filter": "number",
+          "ocr_max_value": 200,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Health": {
+          "nx1": 0.369791,
+          "ny1": 0.925,
+          "nx2": 0.426562,
+          "ny2": 0.967,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Killfeed": {
+          "nx1": 0.0,
+          "ny1": 0.0,
+          "nx2": 0.185625,
+          "ny2": 0.169166,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Chat": {
+          "nx1": 0.01375,
+          "ny1": 0.446,
+          "nx2": 0.309375,
+          "ny2": 0.574,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Zone_Callout": {
+          "nx1": 0.7625,
+          "ny1": 0.008,
+          "nx2": 0.8375,
+          "ny2": 0.033833,
+          "ocr_filter": "letters",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        }
+      }
+    },
+    "16X9": {
+      "boxes": {
+        "Money": {
+          "nx1": 0.027344,
+          "ny1": 0.353925,
+          "nx2": 0.085938,
+          "ny2": 0.381684,
+          "ocr_filter": "number",
+          "ocr_max_value": 99999,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Timer": {
+          "nx1": 0.464844,
+          "ny1": 0.0,
+          "nx2": 0.535156,
+          "ny2": 0.034708,
+          "ocr_filter": "number",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Armor": {
+          "nx1": 0.339844,
+          "ny1": 0.944225,
+          "nx2": 0.359375,
+          "ny2": 0.965053,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Team": {
+          "nx1": 0.8875,
+          "ny1": 0.188889,
+          "nx2": 0.893854,
+          "ny2": 0.198445,
+          "ocr_filter": "color",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Rounds_CT": {
+          "nx1": 0.464844,
+          "ny1": 0.041649,
+          "nx2": 0.496094,
+          "ny2": 0.076357,
+          "ocr_filter": "number",
+          "ocr_max_value": 99,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Rounds_TR": {
+          "nx1": 0.503906,
+          "ny1": 0.041649,
+          "nx2": 0.535156,
+          "ny2": 0.076357,
+          "ocr_filter": "number",
+          "ocr_max_value": 99,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Ammo": {
+          "nx1": 0.128906,
+          "ny1": 0.936905,
+          "nx2": 0.1875,
+          "ny2": 1.0,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "minimap": {
+          "nx1": 0.785156,
+          "ny1": 0.013883,
+          "nx2": 0.992188,
+          "ny2": 0.381773,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "ammo_overall": {
+          "nx1": 0.210938,
+          "ny1": 0.936905,
+          "nx2": 0.261719,
+          "ny2": 1.0,
+          "ocr_filter": "number",
+          "ocr_max_value": 200,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Health": {
+          "nx1": 0.367188,
+          "ny1": 0.916453,
+          "nx2": 0.425781,
+          "ny2": 0.964815,
+          "ocr_filter": "number",
+          "ocr_max_value": 100,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Killfeed": {
+          "nx1": 0.0,
+          "ny1": 0.0,
+          "nx2": 0.1875,
+          "ny2": 0.166501,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Chat": {
+          "nx1": 0.0,
+          "ny1": 0.423323,
+          "nx2": 0.308594,
+          "ny2": 0.589876,
+          "ocr_filter": "none",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru+en",
+          "ocr_postprocess": false,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        },
+        "Zone_Callout": {
+          "nx1": 0.753906,
+          "ny1": 0.013883,
+          "nx2": 0.828125,
+          "ny2": 0.041648,
+          "ocr_filter": "letters",
+          "ocr_max_value": null,
+          "ocr_letters_lang": "ru",
+          "ocr_postprocess": true,
+          "lock_move": false,
+          "lock_size": false,
+          "lock_aspect": false
+        }
+      }
+    }
+  },
+  "boxes": {
+    "Money": {
+      "nx1": 0.025,
+      "ny1": 0.315,
+      "nx2": 0.0825,
+      "ny2": 0.344,
+      "ocr_filter": "number",
+      "ocr_max_value": 99999,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": false,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Timer": {
+      "nx1": 0.464375,
+      "ny1": 0.0,
+      "nx2": 0.535625,
+      "ny2": 0.035,
+      "ocr_filter": "number",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Armor": {
+      "nx1": 0.338125,
+      "ny1": 0.945833,
+      "nx2": 0.364375,
+      "ny2": 0.968833,
+      "ocr_filter": "number",
+      "ocr_max_value": 100,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Team": {
+      "nx1": 0.888125,
+      "ny1": 0.169,
+      "nx2": 0.894375,
+      "ny2": 0.179,
+      "ocr_filter": "color",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": false,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Rounds_CT": {
+      "nx1": 0.464375,
+      "ny1": 0.038,
+      "nx2": 0.498125,
+      "ny2": 0.068,
+      "ocr_filter": "number",
+      "ocr_max_value": 99,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Rounds_TR": {
+      "nx1": 0.501875,
+      "ny1": 0.038,
+      "nx2": 0.535,
+      "ny2": 0.068,
+      "ocr_filter": "number",
+      "ocr_max_value": 99,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Ammo": {
+      "nx1": 0.131459,
+      "ny1": 0.947,
+      "nx2": 0.189584,
+      "ny2": 0.99,
+      "ocr_filter": "number",
+      "ocr_max_value": 100,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "minimap": {
+      "nx1": 0.7875,
+      "ny1": 0.008,
+      "nx2": 0.99375,
+      "ny2": 0.34,
+      "ocr_filter": "none",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": false,
+      "lock_move": true,
+      "lock_size": true,
+      "lock_aspect": true
+    },
+    "ammo_overall": {
+      "nx1": 0.206979,
+      "ny1": 0.952,
+      "nx2": 0.267708,
+      "ny2": 0.989167,
+      "ocr_filter": "number",
+      "ocr_max_value": 200,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Health": {
+      "nx1": 0.369791,
+      "ny1": 0.925,
+      "nx2": 0.426562,
+      "ny2": 0.967,
+      "ocr_filter": "number",
+      "ocr_max_value": 100,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Killfeed": {
+      "nx1": 0.0,
+      "ny1": 0.0,
+      "nx2": 0.185625,
+      "ny2": 0.169166,
+      "ocr_filter": "none",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": false,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Chat": {
+      "nx1": 0.01375,
+      "ny1": 0.446,
+      "nx2": 0.309375,
+      "ny2": 0.574,
+      "ocr_filter": "none",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru+en",
+      "ocr_postprocess": false,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    },
+    "Zone_Callout": {
+      "nx1": 0.7625,
+      "ny1": 0.008,
+      "nx2": 0.8375,
+      "ny2": 0.033833,
+      "ocr_filter": "letters",
+      "ocr_max_value": null,
+      "ocr_letters_lang": "ru",
+      "ocr_postprocess": true,
+      "lock_move": false,
+      "lock_size": false,
+      "lock_aspect": false
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "show_window_border": false,
+  "border_color": "#ff0000",
+  "border_width": 2,
+  "window_border_margins": {
+    "left": 0,
+    "right": 0,
+    "top": 0,
+    "bottom": 0
+  },
+  "grid_settings": {
+    "enabled": true,
+    "size": 2,
+    "magnet": false
+  },
+  "show_box_labels": true,
+  "show_box_sizes": true,
+  "show_overlay": true,
+  "preview_visible": false,
+  "preview_postprocess": false,
+  "zoom": 1.0,
+  "capture_aspect_ratio": 1.3797653958944283,
+  "capture_fps": 60,
+  "capture_mode": "wgc",
+  "selected_hwnd": 67224,
+  "splitter_sizes": [
+    893,
+    286
+  ]
+}

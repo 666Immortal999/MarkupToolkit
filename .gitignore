@@ -1,0 +1,12 @@
+# Python caches
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Local editor settings
+.vscode/
+*.code-workspace
+
+# Runtime logs / temporary files
+*.log
+*.tmp

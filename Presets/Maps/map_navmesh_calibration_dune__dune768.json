@@ -1,0 +1,31 @@
+{
+  "points": [
+    {
+      "map": [
+        145.0,
+        173.0
+      ],
+      "world": [
+        145.0,
+        173.0
+      ]
+    },
+    {
+      "map": [
+        625.0,
+        598.0
+      ],
+      "world": [
+        625.0,
+        598.0
+      ]
+    }
+  ],
+  "boxes": [],
+  "utility": [],
+  "reference_size": [
+    767,
+    768
+  ],
+  "reference_path": "C:\\Files\\Scripts\\SO2Bot\\Scripts\\SO2 Bot\\Maps\\Dune.png"
+}

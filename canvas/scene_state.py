@@ -1,0 +1,2 @@
+﻿class SceneState:
+    pass

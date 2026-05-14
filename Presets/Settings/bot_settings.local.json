@@ -1,0 +1,299 @@
+{
+  "skills": {
+    "yolo_detection": true,
+    "aiming": false,
+    "spraying": false,
+    "auto_shooting": true,
+    "movement": true,
+    "audio_detection": false,
+    "auto_find_game": false,
+    "interactions": false,
+    "communication": false,
+    "analisys": false,
+    "utility": true,
+    "map_orientation": true,
+    "economy": true,
+    "memory": true
+  },
+  "game_mode": "Competitive",
+  "competitive_role": "Opener",
+  "ranked_modes": {
+    "Competitive": {
+      "rounds_to_win": 8,
+      "overtime": true
+    },
+    "Allies": {
+      "rounds_to_win": 8,
+      "overtime": true
+    },
+    "Duel": {
+      "rounds_to_win": 8,
+      "overtime": true
+    }
+  },
+  "team_deathmatch_loadout": {
+    "ct": {
+      "primary_weapon": "M4A4",
+      "pistol": "Desert Eagle"
+    },
+    "tr": {
+      "primary_weapon": "AKR",
+      "pistol": "Desert Eagle"
+    }
+  },
+  "game_map": "Dune",
+  "stop_key": "numpad5",
+  "skill_hotkeys": {
+    "yolo_detection": "f12",
+    "aiming": "mouse5",
+    "spraying": "f2",
+    "auto_shooting": "f3",
+    "movement": "f4",
+    "audio_detection": "f5",
+    "auto_find_game": "",
+    "interactions": "",
+    "communication": "f5",
+    "analisys": "f5",
+    "utility": "f6",
+    "map_orientation": "",
+    "economy": "f8",
+    "memory": "f9"
+  },
+  "ui_buy_test": {
+    "hotkey": "numpad9",
+    "selected_action": "buy_p350"
+  },
+  "ui_start_match": {
+    "hotkey": "numpad8",
+    "interface": "TR_Buy_Menu",
+    "preset": "Buy_preset_1"
+  },
+  "auto_find_game": {
+    "main_menu_ready": false
+  },
+  "app_target": "C:/Users/King/Desktop/Standoff 2 - BlueStacks App Player 1.lnk",
+  "debug_mode": false,
+  "debug_fullscreen": false,
+  "app_target_history": [
+    "C:/Users/King/Desktop/Standoff 2 - BlueStacks App Player 1.lnk",
+    "C:/Program Files/BlueStacks_nxt/HD-Player.exe",
+    "C:/Users/King/Desktop/Counter-Strike 2.url"
+  ],
+  "aiming": {
+    "mode": "snap",
+    "sensitivity": 1.0,
+    "height_tolerance_percent": 1.0,
+    "dynamic_sensitivity_enabled": false,
+    "dynamic_min_sensitivity": 0.5,
+    "dynamic_max_distance_px": 10.0,
+    "max_step": 10,
+    "calculation": {
+      "in_game_sensitivity": 0.7,
+      "mouse_dpi": 1600,
+      "windows_sensitivity": 7,
+      "resolution_width": 1600,
+      "resolution_height": 1000,
+      "fov_x": 86.0,
+      "fov_y": 64.0
+    }
+  },
+  "auto_shooting": {
+    "hit_radius_head_px": 16,
+    "hit_radius_body_px": 20
+  },
+  "movement": {
+    "test_toggle_hotkey": "numpad7",
+    "target_mode": "manual",
+    "turn_sensitivity": 1.0,
+    "turn_step_deg": 8.0,
+    "turn_pixels_per_step": 220,
+    "turn_interval_ms": 28,
+    "random_target_hotkey": "numpad7"
+  },
+  "audio_detection": {
+    "model_path": "",
+    "sample_rate": 16000,
+    "channels": 2,
+    "threshold": 0.6,
+    "device_id": "",
+    "window_seconds": 0.75,
+    "hop_seconds": 0.1,
+    "min_rms": 0.003,
+    "event_cooldown_s": 0.35,
+    "turn_pixels_per_event": 900
+  },
+  "map_orientation": {
+    "minimap_box": "minimap",
+    "interval_ms": 50,
+    "reference_dir": "C:\\Users\\King\\SO2BOT\\Bot\\Maps",
+    "min_match_quality": 0.12,
+    "min_inliers": 12,
+    "ransac_reproj_threshold": 3.0,
+    "max_angle_jump_deg": 90.0,
+    "max_pos_jump_px": 20.0,
+    "smoothing_alpha": 0.0
+  },
+  "map_navmesh": {
+    "navmesh_path": "C:/Files/Scripts/SO2Bot/Scripts/SO2 Bot/Maps/Nav Mesh/NavMesh.json",
+    "calibration_path": "C:\\Files\\Scripts\\SO2Bot\\Scripts\\SO2 Bot\\map_navmesh_calibration.json",
+    "mode": "linear",
+    "subpreset": "default"
+  },
+  "utility": {
+    "method": "Markup",
+    "preset": "default",
+    "selected": "2",
+    "run_request": false,
+    "hotkey": "p",
+    "step_duration_s": "0.1",
+    "turn_step_deg": "90",
+    "turn_mode": "smooth",
+    "turn_gain": "1.0",
+    "turn_smooth": "0.15",
+    "turn_pid_kp": "0.6",
+    "turn_pid_kd": "0.2",
+    "turn_fast_gain": "0.5",
+    "turn_slow_gain": "0.15",
+    "pre_hold_dist_px": "500",
+    "jump_delay_s": "0.2",
+    "release_delay_s": "0.1",
+    "keys": {
+      "flash": "z",
+      "he": "x",
+      "smoke": "c",
+      "molotov": "v"
+    }
+  },
+  "interactions": {
+    "defuse": {
+      "trigger_hotkey": "numpad1",
+      "game_key": "e",
+      "hold_s": "10"
+    },
+    "plant": {
+      "trigger_hotkey": "numpad2",
+      "game_key": "e",
+      "hold_s": "3.0"
+    },
+    "pickup": {
+      "trigger_hotkey": "numpad3",
+      "game_key": "f"
+    },
+    "drop": {
+      "trigger_hotkey": "numpad4",
+      "game_key": "g"
+    },
+    "inspect": {
+      "trigger_hotkey": "numpad6",
+      "game_key": "r"
+    },
+    "tap_hold_s": "0.05",
+    "cooldown_s": "0.25"
+  },
+  "detection": {
+    "scale": 1.0,
+    "imgsz": 640,
+    "conf": 0.05,
+    "iou": 0.05
+  },
+  "ui_ocr": {
+    "enabled": true,
+    "interface": "Get_Info",
+    "preset": "16X10",
+    "interval_ms": 50,
+    "tesseract_cmd": "C:\\Users\\King\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe",
+    "psm": 7,
+    "cycle_seconds": 0.0,
+    "basic_mode": false,
+    "enable_postprocess": false,
+    "upscale_multiplier": 3.0,
+    "clahe_clip_limit": 3.0,
+    "adaptive_block_size": 11,
+    "adaptive_c": 2,
+    "border_px": 2
+  },
+  "show_fps_overlay": true,
+  "show_yolo_window": true,
+  "spraying": {
+    "use_selected_spray": true,
+    "selected_weapon": "m4a1-s"
+  },
+  "economy": {
+    "side": "auto",
+    "ct_interface": "CT_Buy_Menu",
+    "ct_preset": "Buy_preset_1",
+    "tr_interface": "TR_Buy_Menu",
+    "tr_preset": "Buy_preset_1",
+    "auto_open_buy_menu": false,
+    "buy_menu_hotkey": "q",
+    "close_buy_menu_after_purchase": false,
+    "buy_click_pause_s": 0.07,
+    "buy_time_min_seconds": 3,
+    "buy_time_max_seconds": 40,
+    "full_buy_min_money": 4300,
+    "force_buy_min_money": 2400,
+    "armor_rebuy_threshold": 85,
+    "buy_grenades": true,
+    "buy_defuse_kit": true,
+    "autobuy_hotkey": "numpad0",
+    "autobuy_any_time": false,
+    "buy_mode": "auto"
+  },
+  "overlay_window": {
+    "collapsed": {
+      "width": 520,
+      "height": 300
+    },
+    "expanded": {
+      "width": 520,
+      "height": 620
+    },
+    "position": {
+      "x": 16,
+      "y": 16
+    },
+    "data_window": {
+      "is_expanded": false,
+      "sizes": {
+        "collapsed": {
+          "width": 520,
+          "height": 300
+        },
+        "expanded": {
+          "width": 520,
+          "height": 620
+        }
+      },
+      "position": {
+        "x": 16,
+        "y": 16
+      },
+      "collapsed_to_icon": false
+    },
+    "settings_window": {
+      "size": {
+        "width": 420,
+        "height": 320
+      },
+      "position": {
+        "x": 560,
+        "y": 16
+      },
+      "expanded": true
+    },
+    "icons": {
+      "data": {
+        "x": 16,
+        "y": 16
+      },
+      "settings": {
+        "x": 74,
+        "y": 16
+      }
+    }
+  },
+  "preview_movement_path": {
+    "show_raw": true,
+    "show_waypoints": true
+  }
+}

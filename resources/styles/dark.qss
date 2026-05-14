@@ -1,0 +1,138 @@
+QWidget { background: #1a1a1a; color: #e6e6e6; font-size: 13px; }
+QMenuBar, QMenu, QStatusBar { background: #141414; }
+QSplitter::handle { background: #647a9e; border-left: 1px solid #556986; border-right: 1px solid #556986; }
+QFrame#CaptureView { background: #161616; border: none; }
+QFrame#RightPanel { background: #1f232a; border: 1px solid #3f4652; }
+QLabel#ControlPanelHeader {
+  background: #252b35;
+  border-bottom: 1px solid #465163;
+  color: #eef3ff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+QFrame#PanelCard { background: #272d36; border: 1px solid #5a6474; border-radius: 6px; }
+QLabel#PreviewLabel {
+  background: #1b212b;
+  border: 2px solid #7ea9ef;
+  padding: 4px;
+}
+
+QLabel#PanelTitle {
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #5f6b7d;
+  border-radius: 6px;
+  background: #2a313d;
+  color: #e9edf5;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+QPushButton#PanelCollapseButton, QPushButton#PanelReorderButton {
+  min-width: 22px;
+  max-width: 22px;
+  min-height: 22px;
+  max-height: 22px;
+  padding: 0;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget {
+  border-radius: 6px;
+}
+
+QWidget#PanelCard QCheckBox {
+  border-radius: 6px;
+}
+
+QWidget#PanelCard QLabel, QWidget#PanelCard QCheckBox { color: #e9edf5; }
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget { background: #1c2129; border: 1px solid #4f5a6b; color: #edf3ff; }
+QWidget#PanelCard QListWidget::item:selected { background: #4f6f9f; color: #ffffff; }
+
+QPushButton { background:#2f3744; border:1px solid #5a6474; border-radius:6px; padding:6px 12px; color:#eef2fa; font-weight:600; }
+QPushButton:hover { background:#374152; }
+QPushButton#PointTypeButton:checked { background: #4a6fa8; border: 1px solid #7ea9ef; color: #ffffff; }
+QMenu::item { padding: 4px 12px 4px 8px; }
+
+QSlider::groove:horizontal { height: 8px; background: #343b46; border: 1px solid #535f71; border-radius: 4px; }
+QSlider::sub-page:horizontal { background: #6f93d6; border-radius: 4px; }
+QSlider::handle:horizontal { width: 14px; margin: -5px 0; background: #f0f3f8; border: 1px solid #6e8fd6; border-radius: 7px; }
+
+QScrollBar:vertical { background: #1b212a; width: 12px; margin: 2px; border: 1px solid #3b4a5f; border-radius: 6px; }
+QScrollBar::handle:vertical { background: #647a9e; min-height: 24px; border-radius: 5px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { background: transparent; }
+
+QComboBox, QLineEdit, QSpinBox {
+  min-height: 22px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #5a6474;
+  background: #1b212b;
+  color: #edf3ff;
+}
+QComboBox::drop-down {
+  width: 0px;
+  border: none;
+  background: transparent;
+}
+QComboBox::down-arrow {
+  image: none;
+  width: 0px;
+  height: 0px;
+}
+QComboBox QAbstractItemView { border: 1px solid #5a6474; background: #1f2631; color: #eef3ff; selection-background-color: #3f6fcf; }
+
+
+
+QPushButton#LockButton { min-width: 26px; max-width: 26px; min-height: 26px; max-height: 26px; padding: 0; font-size: 12px; font-weight: 700; text-align: center; }
+
+
+
+
+
+QLabel#GridRowLabel { padding-left: 8px; padding-right: 8px; }
+
+
+
+
+QWidget#PanelCard QLabel { padding-left: 8px; padding-right: 8px; }
+
+
+
+
+
+QFrame#PanelCard, QLabel#PanelTitle,
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget,
+QPushButton#LockButton {
+  border-radius: 6px;
+}
+
+/* Final panel rounding override */
+QFrame#PanelCard,
+QLabel#PanelTitle,
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget,
+QWidget#PanelCard QAbstractItemView,
+QWidget#PanelCard QScrollArea,
+QWidget#PanelCard QFrame,
+QPushButton#LockButton {
+  border-radius: 6px;
+}

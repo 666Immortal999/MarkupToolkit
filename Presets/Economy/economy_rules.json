@@ -1,0 +1,524 @@
+{
+  "version": 1,
+  "match": {
+    "rounds_to_win": 8
+  },
+  "money_limits": {
+    "start_money": 800,
+    "max_money": 10000
+  },
+  "win_bonus": {
+    "elimination_or_time": 3000,
+    "objective": 3200
+  },
+  "loss_bonus": {
+    "sequence": [
+      1900,
+      2400,
+      2900
+    ],
+    "on_win": "reset"
+  },
+  "objective_actions": {
+    "plant_t": 600,
+    "defuse_ct": 600
+  },
+  "utility_prices": {
+    "buy_armor": 600,
+    "buy_armor_and_helmet": 1000,
+    "buy_defuse_kit": 200,
+    "buy_flash": 200,
+    "buy_he": 300,
+    "buy_smoke": 300,
+    "buy_molotov_ct": 600,
+    "buy_molotov_tr": 400
+  },
+  "plan_priorities": {
+    "full": {
+      "ct": [
+        "buy_m4",
+        "buy_m4a1",
+        "buy_m16",
+        "buy_famas"
+      ],
+      "tr": [
+        "buy_akr",
+        "buy_akr12",
+        "buy_val",
+        "buy_fn_fal",
+        "buy_mac10"
+      ]
+    },
+    "force": {
+      "ct": [
+        "buy_famas",
+        "buy_mp7",
+        "buy_mp5",
+        "buy_p90"
+      ],
+      "tr": [
+        "buy_fn_fal",
+        "buy_mac10",
+        "buy_mp5",
+        "buy_p90"
+      ]
+    },
+    "eco": {
+      "ct": [
+        "buy_desert_eagle",
+        "buy_five_seven",
+        "buy_tec9"
+      ],
+      "tr": [
+        "buy_desert_eagle",
+        "buy_tec9",
+        "buy_five_seven"
+      ]
+    }
+  },
+  "buy_markup_rules": [
+    {
+      "name": "Full Eco",
+      "side": "ct",
+      "min_money": 0,
+      "max_money": 600,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "eco",
+      "buy": [],
+      "priority": 10
+    },
+    {
+      "name": "Eco Buy",
+      "side": "ct",
+      "min_money": 700,
+      "max_money": 1600,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "eco",
+      "buy": [
+        "buy_desert_eagle"
+      ],
+      "priority": 10
+    },
+    {
+      "name": "Max Money Eco",
+      "side": "ct",
+      "min_money": 1700,
+      "max_money": 1900,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "eco",
+      "buy": [
+        "buy_desert_eagle",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet"
+      ],
+      "priority": 30
+    },
+    {
+      "name": "Force Buy",
+      "side": "ct",
+      "min_money": 2000,
+      "max_money": 3400,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "force",
+      "buy": [
+        "buy_mp7",
+        "buy_defuse_kit",
+        "buy_smoke",
+        "buy_armor_and_helmet"
+      ],
+      "priority": 30
+    },
+    {
+      "name": "Full Buy",
+      "side": "ct",
+      "min_money": 3500,
+      "max_money": 5900,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "markup",
+      "buy": [
+        "buy_m4a1",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet",
+        "buy_flash",
+        "buy_smoke",
+        "buy_he"
+      ],
+      "priority": 40
+    },
+    {
+      "name": "Full Buy",
+      "side": "ct",
+      "min_money": 6000,
+      "max_money": 10000,
+      "min_round": 1,
+      "max_round": 1,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "full",
+      "buy": [
+        "buy_m4",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet",
+        "buy_he",
+        "buy_smoke",
+        "buy_flash"
+      ],
+      "priority": 50
+    },
+    {
+      "name": "rule",
+      "side": "ct",
+      "min_money": 0,
+      "max_money": 10000,
+      "min_round": 15,
+      "max_round": 15,
+      "min_loss_streak": 0,
+      "max_loss_streak": 2,
+      "tier": "markup",
+      "buy": [],
+      "priority": 50
+    }
+  ],
+  "buy_score_rules": [
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Full Eco",
+      "side": "ct",
+      "min_money": 0,
+      "max_money": 600,
+      "tier": "eco",
+      "buy": [],
+      "priority": 10
+    },
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Eco Buy",
+      "side": "ct",
+      "min_money": 700,
+      "max_money": 1600,
+      "tier": "eco",
+      "buy": [
+        "buy_desert_eagle"
+      ],
+      "priority": 10
+    },
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Max Money Eco",
+      "side": "ct",
+      "min_money": 1700,
+      "max_money": 1900,
+      "tier": "eco",
+      "buy": [
+        "buy_desert_eagle",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet"
+      ],
+      "priority": 30
+    },
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Force Buy",
+      "side": "ct",
+      "min_money": 2000,
+      "max_money": 3400,
+      "tier": "force",
+      "buy": [
+        "buy_mp7",
+        "buy_defuse_kit",
+        "buy_smoke",
+        "buy_armor_and_helmet"
+      ],
+      "priority": 30
+    },
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Full Buy",
+      "side": "ct",
+      "min_money": 3500,
+      "max_money": 5900,
+      "tier": "markup",
+      "buy": [
+        "buy_m4a1",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet",
+        "buy_flash",
+        "buy_smoke",
+        "buy_he"
+      ],
+      "priority": 40
+    },
+    {
+      "score_ct": 0,
+      "score_tr": 0,
+      "name": "Full Buy",
+      "side": "ct",
+      "min_money": 6000,
+      "max_money": 10000,
+      "tier": "full",
+      "buy": [
+        "buy_m4",
+        "buy_defuse_kit",
+        "buy_armor_and_helmet",
+        "buy_he",
+        "buy_smoke",
+        "buy_flash"
+      ],
+      "priority": 50
+    },
+    {
+      "score_ct": 7,
+      "score_tr": 7,
+      "name": "rule",
+      "side": "ct",
+      "min_money": 0,
+      "max_money": 10000,
+      "tier": "markup",
+      "buy": [],
+      "priority": 50
+    }
+  ],
+  "auto_buy_rules": [
+    {
+      "buy_label": "buy_usp",
+      "side": "ct",
+      "round_group": "pistol",
+      "min_money": 800,
+      "max_money": 10000,
+      "priority": 10
+    },
+    {
+      "buy_label": "buy_g22",
+      "side": "tr",
+      "round_group": "pistol",
+      "min_money": 800,
+      "max_money": 10000,
+      "priority": 10
+    }
+  ],
+  "weapons": {
+    "buy_akimbo_uzi": {
+      "name": "Akimbo Uzi",
+      "category": "smg",
+      "side": "any",
+      "price": 1700,
+      "kill_reward": 800
+    },
+    "buy_akr": {
+      "name": "AKR",
+      "category": "rifle",
+      "side": "tr",
+      "price": 3000,
+      "kill_reward": 300
+    },
+    "buy_akr12": {
+      "name": "AKR12",
+      "category": "rifle",
+      "side": "tr",
+      "price": 3100,
+      "kill_reward": 300
+    },
+    "buy_awm": {
+      "name": "AWM",
+      "category": "sniper",
+      "side": "any",
+      "price": 4000,
+      "kill_reward": 300
+    },
+    "buy_berettas": {
+      "name": "Berettas",
+      "category": "pistol",
+      "side": "any",
+      "price": 400,
+      "kill_reward": 300
+    },
+    "buy_desert_eagle": {
+      "name": "Desert Eagle",
+      "category": "pistol",
+      "side": "any",
+      "price": 700,
+      "kill_reward": 300
+    },
+    "buy_fabm": {
+      "name": "FABM",
+      "category": "shotgun",
+      "side": "any",
+      "price": 1200,
+      "kill_reward": 600
+    },
+    "buy_famas": {
+      "name": "FAMAS",
+      "category": "rifle",
+      "side": "ct",
+      "price": 2000,
+      "kill_reward": 600
+    },
+    "buy_five_seven": {
+      "name": "Five-Seven",
+      "category": "pistol",
+      "side": "ct",
+      "price": 600,
+      "kill_reward": 300
+    },
+    "buy_fn_fal": {
+      "name": "FN FAL",
+      "category": "rifle",
+      "side": "tr",
+      "price": 1800,
+      "kill_reward": 600
+    },
+    "buy_g22": {
+      "name": "G22",
+      "category": "pistol",
+      "side": "tr",
+      "price": 200,
+      "kill_reward": 300
+    },
+    "buy_m110": {
+      "name": "M110",
+      "category": "sniper",
+      "side": "any",
+      "price": 3800,
+      "kill_reward": 300
+    },
+    "buy_m16": {
+      "name": "M16",
+      "category": "rifle",
+      "side": "ct",
+      "price": 3200,
+      "kill_reward": 300
+    },
+    "buy_m4": {
+      "name": "M4",
+      "category": "rifle",
+      "side": "ct",
+      "price": 2900,
+      "kill_reward": 300
+    },
+    "buy_m40": {
+      "name": "M40",
+      "category": "sniper",
+      "side": "any",
+      "price": 1000,
+      "kill_reward": 800
+    },
+    "buy_m4a1": {
+      "name": "M4A1",
+      "category": "rifle",
+      "side": "ct",
+      "price": 3000,
+      "kill_reward": 300
+    },
+    "buy_m60": {
+      "name": "M60",
+      "category": "heavy",
+      "side": "any",
+      "price": 3400,
+      "kill_reward": 300
+    },
+    "buy_mac10": {
+      "name": "MAC10",
+      "category": "smg",
+      "side": "tr",
+      "price": 1000,
+      "kill_reward": 800
+    },
+    "buy_mallard": {
+      "name": "MALLARD",
+      "category": "sniper",
+      "side": "any",
+      "price": 1600,
+      "kill_reward": 500
+    },
+    "buy_mp5": {
+      "name": "MP5",
+      "category": "smg",
+      "side": "tr",
+      "price": 1400,
+      "kill_reward": 800
+    },
+    "buy_mp7": {
+      "name": "MP7",
+      "category": "smg",
+      "side": "ct",
+      "price": 1500,
+      "kill_reward": 800
+    },
+    "buy_p350": {
+      "name": "P350",
+      "category": "pistol",
+      "side": "any",
+      "price": 300,
+      "kill_reward": 300
+    },
+    "buy_p90": {
+      "name": "P90",
+      "category": "smg",
+      "side": "any",
+      "price": 2100,
+      "kill_reward": 500
+    },
+    "buy_sm1014": {
+      "name": "SM1014",
+      "category": "shotgun",
+      "side": "any",
+      "price": 1600,
+      "kill_reward": 600
+    },
+    "buy_spas": {
+      "name": "SPAS",
+      "category": "shotgun",
+      "side": "any",
+      "price": 1700,
+      "kill_reward": 600
+    },
+    "buy_tec9": {
+      "name": "TEC-9",
+      "category": "pistol",
+      "side": "tr",
+      "price": 600,
+      "kill_reward": 300
+    },
+    "buy_ump45": {
+      "name": "UMP45",
+      "category": "smg",
+      "side": "ct",
+      "price": 1200,
+      "kill_reward": 800
+    },
+    "buy_usp": {
+      "name": "USP",
+      "category": "pistol",
+      "side": "ct",
+      "price": 200,
+      "kill_reward": 300
+    },
+    "buy_val": {
+      "name": "VAL",
+      "category": "rifle",
+      "side": "tr",
+      "price": 2700,
+      "kill_reward": 300
+    }
+  }
+}

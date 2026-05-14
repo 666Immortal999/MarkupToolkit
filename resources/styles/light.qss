@@ -1,0 +1,117 @@
+QWidget { background: #ececec; color: #1f1f1f; font-size: 13px; }
+QMenuBar, QMenu, QStatusBar { background: #f7f7f7; color: #1f1f1f; }
+QSplitter::handle { background: #97aac7; border-left: 1px solid #7f94b2; border-right: 1px solid #7f94b2; }
+QFrame#CaptureView { background: #fdfdfd; border: 1px solid #cfcfcf; }
+QFrame#RightPanel { background: #f2f2f2; border: 1px solid #c8c8c8; }
+
+QFrame#PanelCard { background: #f8f9fb; border: 1px solid #bcc7d8; border-radius: 6px; }
+QLabel#PreviewLabel {
+  background: #ffffff;
+  border: 2px solid #6f93d6;
+  padding: 4px;
+}
+
+QLabel#PanelTitle {
+  margin: 0;
+  padding: 4px 10px;
+  border: 1px solid #bcc7d8;
+  border-radius: 6px;
+  background: #f3f6fb;
+  color: #2a3444;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget {
+  border-radius: 6px;
+}
+
+QWidget#PanelCard QCheckBox {
+  border-radius: 6px;
+}
+
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget { background: #ffffff; border: 1px solid #b8c1d0; }
+QWidget#PanelCard QListWidget::item:selected { background: #d5e3fb; color: #1f1f1f; }
+
+QPushButton { background:#f8f8f8; border:1px solid #bdbdbd; border-radius:6px; padding:6px 12px; color:#1f1f1f; font-weight:600; }
+QPushButton:hover { background:#efefef; }
+QMenu::item { padding: 4px 12px 4px 8px; }
+
+QSlider::groove:horizontal { height: 8px; background: #d8dde6; border: 1px solid #b8c0cc; border-radius: 4px; }
+QSlider::sub-page:horizontal { background: #6f93d6; border-radius: 4px; }
+QSlider::handle:horizontal { width: 14px; margin: -5px 0; background: #ffffff; border: 1px solid #6e8fd6; border-radius: 7px; }
+
+QScrollBar:vertical { background: #eceff4; width: 12px; margin: 2px; border: 1px solid #c3ccd8; border-radius: 6px; }
+QScrollBar::handle:vertical { background: #97aac7; min-height: 24px; border-radius: 5px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { background: transparent; }
+
+QComboBox, QLineEdit, QSpinBox {
+  min-height: 22px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #bcc7d8;
+  background: #ffffff;
+  color: #1f1f1f;
+}
+QComboBox::drop-down {
+  width: 0px;
+  border: none;
+  background: transparent;
+}
+QComboBox::down-arrow {
+  image: none;
+  width: 0px;
+  height: 0px;
+}
+QComboBox QAbstractItemView { border: 1px solid #bcc7d8; background: #ffffff; color: #1f1f1f; selection-background-color: #d5e3fb; }
+
+
+
+QPushButton#LockButton { min-width: 26px; max-width: 26px; min-height: 26px; max-height: 26px; padding: 0; font-size: 12px; font-weight: 700; text-align: center; }
+
+
+
+
+
+QLabel#GridRowLabel { padding-left: 8px; padding-right: 8px; }
+
+
+
+QWidget#PanelCard QLabel { padding-left: 8px; padding-right: 8px; }
+
+
+
+
+
+QFrame#PanelCard, QLabel#PanelTitle,
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget,
+QPushButton#LockButton {
+  border-radius: 6px;
+}
+
+/* Final panel rounding override */
+QFrame#PanelCard,
+QLabel#PanelTitle,
+QWidget#PanelCard QPushButton,
+QWidget#PanelCard QLineEdit,
+QWidget#PanelCard QSpinBox,
+QWidget#PanelCard QComboBox,
+QWidget#PanelCard QListWidget,
+QWidget#PanelCard QAbstractItemView,
+QWidget#PanelCard QScrollArea,
+QWidget#PanelCard QFrame,
+QPushButton#LockButton {
+  border-radius: 6px;
+}

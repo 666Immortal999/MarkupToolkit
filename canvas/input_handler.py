@@ -1,0 +1,2 @@
+﻿class InputHandler:
+    pass

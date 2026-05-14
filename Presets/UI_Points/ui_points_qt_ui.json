@@ -1,0 +1,10 @@
+{
+  "grid_enabled": false,
+  "grid_size": 24,
+  "grid_magnet": false,
+  "overlay_enabled": true,
+  "splitter_sizes": [
+    873,
+    396
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "version": 1,
+  "view": {
+    "zoom": 0.8
+  },
+  "tree_nodes": [
+    {
+      "node_id": "root",
+      "parent_id": "",
+      "name": "ROOT",
+      "node_type": "condition",
+      "color": "#2563eb",
+      "x": 80,
+      "y": 80
+    },
+    {
+      "node_id": "step_update_perception",
+      "parent_id": "root",
+      "name": "UpdatePerception",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 360,
+      "y": 80
+    },
+    {
+      "node_id": "step_compute_derived",
+      "parent_id": "step_update_perception",
+      "name": "ComputeDerivedData",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 640,
+      "y": 80
+    },
+    {
+      "node_id": "step_resolve_context",
+      "parent_id": "step_compute_derived",
+      "name": "ResolveContext",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 920,
+      "y": 80
+    },
+    {
+      "node_id": "step_build_actions",
+      "parent_id": "step_resolve_context",
+      "name": "BuildAvailableActions",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 1200,
+      "y": 80
+    },
+    {
+      "node_id": "step_eval_utility",
+      "parent_id": "step_build_actions",
+      "name": "EvaluateUtility",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 1480,
+      "y": 80
+    },
+    {
+      "node_id": "step_apply_mods",
+      "parent_id": "step_eval_utility",
+      "name": "ApplyContextModifiers",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 1760,
+      "y": 80
+    },
+    {
+      "node_id": "step_select_best",
+      "parent_id": "step_apply_mods",
+      "name": "SelectBestAction(argmax)",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 2040,
+      "y": 80
+    },
+    {
+      "node_id": "step_execute",
+      "parent_id": "step_select_best",
+      "name": "ExecuteAction",
+      "node_type": "condition",
+      "color": "#059669",
+      "x": 2320,
+      "y": 80
+    },
+    {
+      "node_id": "act_shoot",
+      "parent_id": "step_execute",
+      "name": "SHOOT: aim + fire",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 240,
+      "score": 0.35
+    },
+    {
+      "node_id": "act_reload",
+      "parent_id": "step_execute",
+      "name": "RELOAD",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 340,
+      "score": 0.1
+    },
+    {
+      "node_id": "act_throw_grenade",
+      "parent_id": "step_execute",
+      "name": "THROW_GRENADE: flash/smoke/HE",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 440,
+      "score": 0.15
+    },
+    {
+      "node_id": "act_pickup",
+      "parent_id": "step_execute",
+      "name": "PICKUP",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 540,
+      "score": 0.08
+    },
+    {
+      "node_id": "act_plant",
+      "parent_id": "step_execute",
+      "name": "PLANT",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 640,
+      "score": 0.12
+    },
+    {
+      "node_id": "act_defuse",
+      "parent_id": "step_execute",
+      "name": "DEFUSE",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 740,
+      "score": 0.18
+    },
+    {
+      "node_id": "act_move",
+      "parent_id": "step_execute",
+      "name": "MOVE: walk/shift/reposition",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 840,
+      "score": 0.25
+    },
+    {
+      "node_id": "act_trade",
+      "parent_id": "step_execute",
+      "name": "TRADE: push_after_teammate_death",
+      "node_type": "action",
+      "color": "#d97706",
+      "x": 2320,
+      "y": 940,
+      "score": 0.14
+    }
+  ],
+  "conditions": {
+    "ctx_retake": {
+      "name": "Context RETAKE",
+      "key": "context",
+      "op": "==",
+      "value": "RETAKE",
+      "enabled": true
+    },
+    "ctx_post_plant": {
+      "name": "Context POST_PLANT",
+      "key": "context",
+      "op": "==",
+      "value": "POST_PLANT",
+      "enabled": true
+    },
+    "ctx_save": {
+      "name": "Context SAVE",
+      "key": "context",
+      "op": "==",
+      "value": "SAVE",
+      "enabled": true
+    },
+    "ctx_combat": {
+      "name": "Context COMBAT",
+      "key": "context",
+      "op": "==",
+      "value": "COMBAT",
+      "enabled": true
+    },
+    "can_shoot": {
+      "name": "Can shoot",
+      "key": "can_shoot",
+      "op": "is_true",
+      "value": true,
+      "enabled": true
+    },
+    "visible_enemy": {
+      "name": "Visible enemies > 0",
+      "key": "visible_enemies",
+      "op": ">",
+      "value": 0,
+      "enabled": true
+    },
+    "low_ammo": {
+      "name": "Low ammo",
+      "key": "low_ammo",
+      "op": "is_true",
+      "value": true,
+      "enabled": true
+    },
+    "danger_low": {
+      "name": "Danger < 0.5",
+      "key": "danger",
+      "op": "<",
+      "value": 0.5,
+      "enabled": true
+    },
+    "danger_high": {
+      "name": "Danger > 0.7",
+      "key": "danger",
+      "op": ">",
+      "value": 0.7,
+      "enabled": true
+    },
+    "has_grenade": {
+      "name": "Has grenade",
+      "key": "has_grenade",
+      "op": "is_true",
+      "value": true,
+      "enabled": true
+    },
+    "teammate_recent_death": {
+      "name": "Teammate recent death",
+      "key": "teammate_recent_death",
+      "op": "is_true",
+      "value": true,
+      "enabled": true
+    },
+    "enemy_close": {
+      "name": "Enemy close",
+      "key": "distance_to_enemy",
+      "op": "<",
+      "value": 15,
+      "enabled": true
+    },
+    "can_defuse": {
+      "name": "Can defuse",
+      "key": "can_defuse",
+      "op": "is_true",
+      "value": true,
+      "enabled": true
+    }
+  },
+  "actions": {
+    "SHOOT": {
+      "name": "SHOOT",
+      "point_label": "action_shoot",
+      "base_score": 0.35,
+      "enabled": true
+    },
+    "RELOAD": {
+      "name": "RELOAD",
+      "point_label": "action_reload",
+      "base_score": 0.1,
+      "enabled": true
+    },
+    "THROW_GRENADE": {
+      "name": "THROW_GRENADE",
+      "point_label": "action_throw_grenade",
+      "base_score": 0.15,
+      "enabled": true
+    },
+    "PICKUP": {
+      "name": "PICKUP",
+      "point_label": "action_pickup",
+      "base_score": 0.08,
+      "enabled": true
+    },
+    "PLANT": {
+      "name": "PLANT",
+      "point_label": "action_plant",
+      "base_score": 0.12,
+      "enabled": true
+    },
+    "DEFUSE": {
+      "name": "DEFUSE",
+      "point_label": "action_defuse",
+      "base_score": 0.18,
+      "enabled": true
+    },
+    "MOVE": {
+      "name": "MOVE",
+      "point_label": "action_move",
+      "base_score": 0.25,
+      "enabled": true
+    },
+    "TRADE": {
+      "name": "TRADE",
+      "point_label": "action_trade",
+      "base_score": 0.14,
+      "enabled": true
+    }
+  },
+  "links": [
+    {
+      "name": "Shoot requires can_shoot",
+      "condition_id": "can_shoot",
+      "action_id": "SHOOT",
+      "true_delta": 0.2,
+      "false_delta": -1.0,
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "Shoot requires visible_enemy",
+      "condition_id": "visible_enemy",
+      "action_id": "SHOOT",
+      "true_delta": 0.2,
+      "false_delta": -1.0,
+      "priority": 11,
+      "enabled": true
+    },
+    {
+      "name": "Reload when low ammo",
+      "condition_id": "low_ammo",
+      "action_id": "RELOAD",
+      "true_delta": 0.35,
+      "false_delta": -0.25,
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "name": "Reload when danger low",
+      "condition_id": "danger_low",
+      "action_id": "RELOAD",
+      "true_delta": 0.25,
+      "false_delta": -0.6,
+      "priority": 21,
+      "enabled": true
+    },
+    {
+      "name": "Defuse possible",
+      "condition_id": "can_defuse",
+      "action_id": "DEFUSE",
+      "true_delta": 0.35,
+      "false_delta": -1.0,
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "name": "Grenade requires grenade",
+      "condition_id": "has_grenade",
+      "action_id": "THROW_GRENADE",
+      "true_delta": 0.35,
+      "false_delta": -1.0,
+      "priority": 40,
+      "enabled": true
+    },
+    {
+      "name": "Grenade in combat",
+      "condition_id": "ctx_combat",
+      "action_id": "THROW_GRENADE",
+      "true_delta": 0.2,
+      "false_delta": 0.0,
+      "priority": 41,
+      "enabled": true
+    },
+    {
+      "name": "Grenade in retake",
+      "condition_id": "ctx_retake",
+      "action_id": "THROW_GRENADE",
+      "true_delta": 0.2,
+      "false_delta": 0.0,
+      "priority": 42,
+      "enabled": true
+    },
+    {
+      "name": "Trade needs recent death",
+      "condition_id": "teammate_recent_death",
+      "action_id": "TRADE",
+      "true_delta": 0.3,
+      "false_delta": -0.2,
+      "priority": 50,
+      "enabled": true
+    },
+    {
+      "name": "Trade needs enemy close",
+      "condition_id": "enemy_close",
+      "action_id": "TRADE",
+      "true_delta": 0.25,
+      "false_delta": -0.25,
+      "priority": 51,
+      "enabled": true
+    },
+    {
+      "name": "Move on high danger",
+      "condition_id": "danger_high",
+      "action_id": "MOVE",
+      "true_delta": 0.3,
+      "false_delta": 0.0,
+      "priority": 60,
+      "enabled": true
+    },
+    {
+      "name": "Move in save context",
+      "condition_id": "ctx_save",
+      "action_id": "MOVE",
+      "true_delta": 0.5,
+      "false_delta": 0.0,
+      "priority": 61,
+      "enabled": true
+    },
+    {
+      "name": "Retake boosts defuse",
+      "condition_id": "ctx_retake",
+      "action_id": "DEFUSE",
+      "true_delta": 0.3,
+      "false_delta": 0.0,
+      "priority": 70,
+      "enabled": true
+    },
+    {
+      "name": "Combat boosts shoot",
+      "condition_id": "ctx_combat",
+      "action_id": "SHOOT",
+      "true_delta": 0.25,
+      "false_delta": 0.0,
+      "priority": 71,
+      "enabled": true
+    },
+    {
+      "name": "Retake disable plant",
+      "condition_id": "ctx_retake",
+      "action_id": "PLANT",
+      "true_delta": -1.0,
+      "false_delta": 0.0,
+      "priority": 80,
+      "enabled": true
+    },
+    {
+      "name": "Save disable defuse",
+      "condition_id": "ctx_save",
+      "action_id": "DEFUSE",
+      "true_delta": -1.0,
+      "false_delta": 0.0,
+      "priority": 81,
+      "enabled": true
+    },
+    {
+      "name": "Save disable trade",
+      "condition_id": "ctx_save",
+      "action_id": "TRADE",
+      "true_delta": -1.0,
+      "false_delta": 0.0,
+      "priority": 82,
+      "enabled": true
+    },
+    {
+      "name": "Save disable grenade",
+      "condition_id": "ctx_save",
+      "action_id": "THROW_GRENADE",
+      "true_delta": -1.0,
+      "false_delta": 0.0,
+      "priority": 83,
+      "enabled": true
+    },
+    {
+      "name": "Post-plant favors move",
+      "condition_id": "ctx_post_plant",
+      "action_id": "MOVE",
+      "true_delta": 0.25,
+      "false_delta": 0.0,
+      "priority": 90,
+      "enabled": true
+    },
+    {
+      "name": "Post-plant reduce shoot aggression",
+      "condition_id": "ctx_post_plant",
+      "action_id": "SHOOT",
+      "true_delta": -0.15,
+      "false_delta": 0.0,
+      "priority": 91,
+      "enabled": true
+    }
+  ],
+  "derived_signals": {
+    "hp_ratio": "hp / 100",
+    "low_ammo": "ammo_clip < 5",
+    "can_shoot": "ammo_clip > 0",
+    "team_advantage": "alive_team / max(1, alive_enemy)",
+    "enemy_near": "visible_enemies > 0 OR recent_sound_event",
+    "danger": "(visible_enemies*0.5) + (1-hp_ratio) + (enemy_near ? 0.5 : 0)",
+    "can_defuse": "bomb_time_left > defuse_time",
+    "urgent": "bomb_time_left < 10"
+  },
+  "contexts": [
+    "DEFAULT",
+    "COMBAT",
+    "RETAKE",
+    "POST_PLANT",
+    "SAVE"
+  ],
+  "context_resolver": [
+    "if bomb_planted AND team == CT => RETAKE",
+    "if bomb_planted AND team == T => POST_PLANT",
+    "if alive_team <= 1 AND alive_enemy >= 3 => SAVE",
+    "if visible_enemies > 0 OR enemy_near => COMBAT",
+    "else => DEFAULT"
+  ],
+  "utility_formulas": {
+    "SHOOT": "can_shoot * (visible_enemies > 0) * (1 - danger*0.5) * hp_ratio",
+    "RELOAD": "low_ammo * (visible_enemies == 0) * (danger < 0.5)",
+    "DEFUSE": "can_defuse ? (1-danger)*team_advantage : 0",
+    "THROW_GRENADE": "(visible_enemies > 0) * has_grenade * (context in [RETAKE, COMBAT])",
+    "TRADE": "teammate_recent_death * (distance_to_enemy < threshold)",
+    "MOVE": "(visible_enemies == 0) + (danger > 0.7)",
+    "SAVE": "(alive_team<=1) * (alive_enemy>=2) * weapon_value_high"
+  },
+  "context_modifiers": {
+    "RETAKE": {
+      "disable": [
+        "PLANT"
+      ],
+      "boost": {
+        "DEFUSE": 1.5,
+        "THROW_GRENADE": 1.3
+      }
+    },
+    "POST_PLANT": {
+      "boost": {
+        "MOVE": 1.2
+      },
+      "reduce": {
+        "SHOOT": 0.85
+      }
+    },
+    "SAVE": {
+      "disable": [
+        "DEFUSE",
+        "TRADE",
+        "THROW_GRENADE"
+      ],
+      "boost": {
+        "MOVE": 2.0
+      }
+    },
+    "COMBAT": {
+      "boost": {
+        "SHOOT": 1.5
+      }
+    }
+  },
+  "execution_pipeline": [
+    "UpdatePerception",
+    "ComputeDerivedData",
+    "ResolveContext",
+    "BuildAvailableActions(context)",
+    "EvaluateUtility(actions)",
+    "ApplyContextModifiers",
+    "SelectBestAction(argmax)",
+    "ExecuteAction"
+  ],
+  "constraints": {
+    "scores_clamped_0_1": true,
+    "impossible_actions_return_zero": true,
+    "context_defines_allowed": true,
+    "utility_defines_best": true
+  },
+  "notes": "Hybrid Behavior Tree + Utility AI preset generated from design prompt for tactical FPS bot."
+}

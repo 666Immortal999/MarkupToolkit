@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "view": {
+    "zoom": 0.7
+  },
+  "tree_nodes": [
+    {
+      "node_id": "root",
+      "parent_id": "",
+      "name": "sees weapons as more valuable than his own",
+      "node_type": "condition",
+      "color": "#d97706",
+      "x": 1042,
+      "y": 313
+    },
+    {
+      "node_id": "act_peek",
+      "parent_id": "",
+      "name": "нррн",
+      "node_type": "action",
+      "color": "#ff0000",
+      "x": 721,
+      "y": 322,
+      "score": 0.0
+    },
+    {
+      "node_id": "cond_4",
+      "parent_id": "",
+      "name": "cond_enemy_visible",
+      "node_type": "action",
+      "color": "#2563eb",
+      "x": 411,
+      "y": 316,
+      "score": 0.0
+    },
+    {
+      "node_id": "cond_enemy_visible",
+      "parent_id": "",
+      "name": "cond_enemy_visible",
+      "node_type": "condition",
+      "color": "#2563eb",
+      "x": 711,
+      "y": 543
+    }
+  ],
+  "conditions": {
+    "enemy_visible": {
+      "name": "Enemy visible",
+      "key": "enemy_visible",
+      "op": "==",
+      "value": true,
+      "enabled": true
+    },
+    "low_hp": {
+      "name": "Low HP",
+      "key": "hp",
+      "op": "<=",
+      "value": 40,
+      "enabled": true
+    }
+  },
+  "actions": {
+    "peek": {
+      "name": "Peek",
+      "point_label": "action_peek",
+      "base_score": 0.45,
+      "enabled": true
+    },
+    "fallback": {
+      "name": "Fallback",
+      "point_label": "action_fallback",
+      "base_score": 0.35,
+      "enabled": true
+    }
+  },
+  "links": [
+    {
+      "name": "Enemy boosts peek",
+      "condition_id": "enemy_visible",
+      "action_id": "peek",
+      "true_delta": 0.4,
+      "false_delta": -0.2,
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "Low hp boosts fallback",
+      "condition_id": "low_hp",
+      "action_id": "fallback",
+      "true_delta": 0.35,
+      "false_delta": 0.0,
+      "priority": 20,
+      "enabled": true
+    }
+  ]
+}
