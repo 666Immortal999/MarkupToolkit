@@ -4,8 +4,8 @@
   "capture_mode": "wgc",
   "aspect_label": "Free",
   "auto_aspect_from_source": true,
-  "selected_hwnd": 263616,
-  "active_tool_id": "map",
+  "selected_hwnd": 0,
+  "active_tool_id": "controls",
   "workspace": {
     "mode_states": {
       "base": {
@@ -257,7 +257,7 @@
           "show_labels": true,
           "show_sizes": false,
           "show_hatch": true,
-          "point_size": 10,
+          "point_size": 5,
           "point_size_locked": true,
           "point_axis_magnet": false
         },
