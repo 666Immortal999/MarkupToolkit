@@ -1,5 +1,7 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
+import os
+import sys
 from pathlib import Path
 
 from core.constants import DEFAULT_SIZE, WINDOW_TITLE
@@ -112,6 +114,13 @@ class MainWindow(QMainWindow):
             self._last_valid_capture = pixmap
             self.workspace.canvas.set_capture_pixmap(pixmap)
             return
+        if sys.platform.startswith("linux"):
+            fallback_pix = screen.grabWindow(0)
+            if fallback_pix and not fallback_pix.isNull() and fallback_pix.width() > 2 and fallback_pix.height() > 2:
+                self._apply_source_aspect(fallback_pix.width(), fallback_pix.height())
+                self._last_valid_capture = fallback_pix
+                self.workspace.canvas.set_capture_pixmap(fallback_pix)
+                return
         self.workspace.canvas.set_capture_pixmap(QPixmap())
 
     def fit_game_window(self) -> None:
@@ -318,6 +327,13 @@ class MainWindow(QMainWindow):
         self.statusBar().showMessage(f"Aspect: {label}", 1500)
 
     def set_capture_mode(self, mode: str) -> None:
+        if mode == "wgc" and sys.platform != "win32":
+            self.capture_mode = "fallback"
+            self.wgc.stop()
+            if hasattr(self, "_menu"):
+                self._menu.set_current_capture_mode(self.capture_mode)
+            self.statusBar().showMessage("WGC mode is available only on Windows", 2200)
+            return
         self.capture_mode = mode if mode in {"fallback", "wgc"} else "fallback"
         if self.capture_mode == "wgc" and self.selected_hwnd:
             self.wgc.start(self.selected_hwnd, self._window_title_by_hwnd.get(self.selected_hwnd))
@@ -332,7 +348,20 @@ class MainWindow(QMainWindow):
         self._window_title_by_hwnd = {w.hwnd: w.title for w in windows}
         self._menu.rebuild_window_list([(w.hwnd, w.title) for w in windows])
         self._menu.set_current_hwnd(self.selected_hwnd)
+        if sys.platform.startswith("linux") and not windows:
+            session_type = str(os.environ.get("XDG_SESSION_TYPE", "")).lower()
+            if session_type == "wayland":
+                self.statusBar().showMessage("No windows found: Wayland may block listing/capture. Try X11 session.", 3500)
+                return
         self.statusBar().showMessage(f"Windows found: {len(windows)}", 1500)
+
+    def toggle_fullscreen(self) -> None:
+        if self.isFullScreen():
+            self.showNormal()
+            self.statusBar().showMessage("Fullscreen disabled", 1500)
+        else:
+            self.showFullScreen()
+            self.statusBar().showMessage("Fullscreen enabled", 1500)
 
     def select_window(self, hwnd: int) -> None:
         self.wgc.stop()
@@ -548,3 +577,4 @@ class MainWindow(QMainWindow):
         sb = self.statusBar()
         if sb is not None and hasattr(sb, "set_zoom_percent"):
             sb.set_zoom_percent(self.workspace.canvas.capture.get_zoom())
+

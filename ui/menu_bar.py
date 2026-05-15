@@ -54,6 +54,8 @@ class AppMenuBar(QMenuBar):
         view = self.addMenu("View")
         view.addAction("Fit Game Window", self._cb("fit_game_window"))
         view.addAction("Reset Zoom", self._cb("reset_zoom"))
+        view.addSeparator()
+        view.addAction("Toggle Fullscreen", self._cb("toggle_fullscreen"))
         self._fit_menu_width(view)
 
     def _build_settings_menu(self) -> None:
