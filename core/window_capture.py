@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ctypes
+import os
 import shutil
 import subprocess
 import sys
@@ -98,10 +99,34 @@ def _list_windows_linux_x11() -> list[WindowInfo]:
     return sorted(dedup.values(), key=lambda x: x.title.lower())
 
 
+def _list_windows_wayland() -> list[WindowInfo]:
+    try:
+        proc = subprocess.run(
+            ["hyprctl", "clients", "-j"],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        import json
+
+        clients = json.loads(proc.stdout)
+        items = []
+        for c in clients:
+            title = c.get("title", "").strip()
+            wid = c.get("address", "0x0")
+            if title:
+                items.append(WindowInfo(hwnd=int(wid, 16), title=title))
+        return sorted(items, key=lambda x: x.title.lower())
+    except Exception:
+        return []
+
+
 def list_task_windows() -> list[WindowInfo]:
     if sys.platform == "win32":
         return _list_windows_win32()
     if sys.platform.startswith("linux"):
+        if os.environ.get("WAYLAND_DISPLAY"):
+            return _list_windows_wayland()
         return _list_windows_linux_x11()
     return []
 
