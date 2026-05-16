@@ -10,3 +10,6 @@
 # Runtime logs / temporary files
 *.log
 *.tmp
+
+# Local app settings
+settings.json
