@@ -9,6 +9,7 @@ from core.project_manager import ProjectManager
 from core.settings_manager import SettingsManager
 from core.theme_manager import ThemeManager
 from core.tool_manager import ToolManager
+from core.wayland_capture import WaylandCapture
 from core.window_capture import list_task_windows
 from core.wgc_capture import WgcHwndCapture
 from qt import QApplication, QFileDialog, QInputDialog, QKeySequence, QMainWindow, QMessageBox, QPixmap, QShortcut, QTimer
@@ -32,6 +33,7 @@ class MainWindow(QMainWindow):
         self.selected_hwnd = 0
         self._window_title_by_hwnd: dict[int, str] = {}
         self.wgc = WgcHwndCapture()
+        self.wayland = WaylandCapture()
         self.settings = SettingsManager()
         self._saving_settings_in_progress = False
         self._last_valid_capture = QPixmap()
@@ -104,6 +106,15 @@ class MainWindow(QMainWindow):
                     return
             self.workspace.canvas.set_capture_pixmap(QPixmap())
             return
+        if sys.platform.startswith("linux") and os.environ.get("WAYLAND_DISPLAY"):
+            frame = self.wayland.get_latest_qimage()
+            if frame is not None and not frame.isNull():
+                self._apply_source_aspect(frame.width(), frame.height())
+                pix = QPixmap.fromImage(frame)
+                if not pix.isNull() and pix.width() > 2 and pix.height() > 2:
+                    self._last_valid_capture = pix
+                    self.workspace.canvas.set_capture_pixmap(pix)
+                    return
 
         screen = self.windowHandle().screen() if self.windowHandle() else QApplication.primaryScreen()
         if screen is None:
@@ -335,10 +346,13 @@ class MainWindow(QMainWindow):
             self.statusBar().showMessage("WGC mode is available only on Windows", 2200)
             return
         self.capture_mode = mode if mode in {"fallback", "wgc"} else "fallback"
+        self.wayland.stop()
         if self.capture_mode == "wgc" and self.selected_hwnd:
             self.wgc.start(self.selected_hwnd, self._window_title_by_hwnd.get(self.selected_hwnd))
         else:
             self.wgc.stop()
+            if sys.platform.startswith("linux") and os.environ.get("WAYLAND_DISPLAY") and self.selected_hwnd:
+                self.wayland.start()
         if hasattr(self, "_menu"):
             self._menu.set_current_capture_mode(self.capture_mode)
         self.statusBar().showMessage(f"Capture Mode: {self.capture_mode}", 1500)
@@ -365,6 +379,7 @@ class MainWindow(QMainWindow):
 
     def select_window(self, hwnd: int) -> None:
         self.wgc.stop()
+        self.wayland.stop()
         self.selected_hwnd = int(hwnd)
         self._last_valid_capture = QPixmap()
         self._last_minimized_state = False
@@ -376,6 +391,8 @@ class MainWindow(QMainWindow):
             self._apply_capture_fps()
         if self.capture_mode == "wgc":
             self.wgc.start(self.selected_hwnd, self._window_title_by_hwnd.get(self.selected_hwnd))
+        elif sys.platform.startswith("linux") and os.environ.get("WAYLAND_DISPLAY"):
+            self.wayland.start()
         if hasattr(self, "_menu"):
             self._menu.set_current_hwnd(self.selected_hwnd)
         self.statusBar().showMessage(f"Selected window HWND: {self.selected_hwnd}", 1500)
@@ -401,6 +418,7 @@ class MainWindow(QMainWindow):
     def clear_selected_window(self) -> None:
         self.selected_hwnd = 0
         self.wgc.stop()
+        self.wayland.stop()
         self.workspace.canvas.set_capture_pixmap(QPixmap())
         if hasattr(self, "_menu"):
             self._menu.set_current_hwnd(0)
@@ -538,6 +556,8 @@ class MainWindow(QMainWindow):
             if choice == QMessageBox.StandardButton.Save:
                 self.workspace._save_current_mode_markup()
         self._save_settings()
+        self.wgc.stop()
+        self.wayland.stop()
         super().closeEvent(event)
 
     def file_new(self) -> None:

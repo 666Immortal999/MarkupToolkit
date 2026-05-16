@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import argparse
 import sys
 
 from qt import QApplication
@@ -12,7 +13,19 @@ from tools.registry import REGISTERED_TOOLS
 from ui.main_window import MainWindow
 
 
+def _parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument(
+        "--fullscreen",
+        action="store_true",
+        help="Start the app in fullscreen mode.",
+    )
+    args, _ = parser.parse_known_args(argv)
+    return args
+
+
 def run() -> None:
+    args = _parse_args(sys.argv[1:])
     app = QApplication(sys.argv)
     app.setApplicationName(APP_NAME)
 
@@ -24,7 +37,10 @@ def run() -> None:
     project_manager = ProjectManager()
 
     window = MainWindow(tool_manager=tool_manager, project_manager=project_manager, theme_manager=theme_manager)
-    window.show()
+    if args.fullscreen:
+        window.showFullScreen()
+    else:
+        window.show()
 
     if tool_manager.list_tools() and tool_manager.active_tool is None:
         tool_manager.set_active_tool(tool_manager.list_tools()[0].id)
